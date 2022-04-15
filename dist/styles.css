@@ -61,6 +61,13 @@
   gap: 1em;
 }
 
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
 .unit-wrap {
   z-index: 1;
   grid-area: form;
