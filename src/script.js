@@ -50,7 +50,12 @@ searchForm.addEventListener("submit", async (e) => {
   getDateTime(currentCityForecast);
   renderWeatherIcon(currentCityWeather);
   renderCurrentWeather(currentCityWeather, metric);
-  renderDailyForecast(currentCityForecast, metric);
+
+  if (dailyForecast) {
+    renderDailyForecast(currentCityForecast, metric);
+  } else {
+    renderHourlyForecast(currentCityForecast, metric);
+  }
 });
 
 unitBtn.addEventListener("click", async () => {
@@ -80,7 +85,11 @@ unitBtn.addEventListener("click", async () => {
   getDateTime(currentCityForecast);
   renderWeatherIcon(currentCityWeather);
   renderCurrentWeather(currentCityWeather, metric);
-  renderDailyForecast(currentCityForecast, metric);
+  if (dailyForecast) {
+    renderDailyForecast(currentCityForecast, metric);
+  } else {
+    renderHourlyForecast(currentCityForecast, metric);
+  }
 });
 
 forecastBtn.addEventListener("click", async () => {
@@ -118,5 +127,9 @@ window.addEventListener("load", async () => {
   getDateTime(currentCityForecast);
   renderWeatherIcon(currentCityWeather);
   renderCurrentWeather(currentCityWeather, metric);
-  renderDailyForecast(currentCityForecast, metric);
+  if (dailyForecast) {
+    renderDailyForecast(currentCityForecast, metric);
+  } else {
+    renderHourlyForecast(currentCityForecast, metric);
+  }
 });
