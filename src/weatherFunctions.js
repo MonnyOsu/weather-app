@@ -35,5 +35,5 @@ async function getForecastFahrenheit(lat, lon) {
   let forecastResponse = await forecastRequest.json();
   return await forecastResponse;
 }
-
+ 
 export { getWeather, getForecast, getWeatherFahrenheit, getForecastFahrenheit };
