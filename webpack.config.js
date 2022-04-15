@@ -1,5 +1,7 @@
 const path = require("path");
 
+var ghpages = require("gh-pages");
+
 module.exports = {
   mode: "development",
   entry: "./src/script.js",

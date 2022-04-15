@@ -12,7 +12,7 @@ async function getWeather(currentCity) {
 
 async function getForecast(lat, lon) {
   let forecastRequest = await fetch(
-    `http://api.openweathermap.org/data/2.5/onecall?lon=${lon}&lat=${lat}&units=metric&exclude=minutely&appid=72cd63cd4bf6c2de16abe8bc643a4e42`
+    `https://api.openweathermap.org/data/2.5/onecall?lon=${lon}&lat=${lat}&units=metric&exclude=minutely&appid=72cd63cd4bf6c2de16abe8bc643a4e42`
   );
   let forecastResponse = await forecastRequest.json();
   return await forecastResponse;
@@ -30,7 +30,7 @@ async function getWeatherFahrenheit(currentCity) {
 
 async function getForecastFahrenheit(lat, lon) {
   let forecastRequest = await fetch(
-    `http://api.openweathermap.org/data/2.5/onecall?lon=${lon}&lat=${lat}&exclude=minutely&units=imperial&appid=72cd63cd4bf6c2de16abe8bc643a4e42`
+    `https://api.openweathermap.org/data/2.5/onecall?lon=${lon}&lat=${lat}&exclude=minutely&units=imperial&appid=72cd63cd4bf6c2de16abe8bc643a4e42`
   );
   let forecastResponse = await forecastRequest.json();
   return await forecastResponse;
