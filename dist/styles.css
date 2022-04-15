@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", arial;
+}
+
+#background-image {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  position: relative;
+}
+
+#background-image::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(194, 194, 194, 0.6);
+}
+
+.content-grid {
+  height: 100vh;
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 300px 1fr 1fr;
+  grid-template-rows: 20% 20% 30% 30%;
+  grid-template-areas:
+    "title . ."
+    "weather . ."
+    "form . ."
+    "forecast forecast forecast";
+  padding: 2em 4em;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  text-decoration: none;
+  color: black;
+  z-index: 1;
+}
+
+.search-form-wrap {
+  z-index: 1;
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.unit-wrap {
+  z-index: 1;
+  grid-area: form;
+}
+
+.units {
+  width: 100px;
+  padding: 0.5em;
+  background: none;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.city-heading-wrap {
+  grid-area: title;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.city-heading {
+  font-size: 4rem;
+  letter-spacing: 3px;
+}
+
+.time-date {
+  font-size: 1rem;
+  text-align: right;
+}
+
+.current-weather-wrap {
+  grid-area: weather;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2em;
+}
+
+.current-weather-icon {
+  height: 120px;
+  width: auto;
+}
+
+.current-weather-info {
+  height: 120px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.weather-text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.weather-temp {
+  font-size: 3.8rem;
+  position: relative;
+}
+
+.celsius::after {
+  content: "°C";
+  position: absolute;
+  font-size: 2rem;
+  top: 5px;
+}
+.fahrenheit::after {
+  content: "°F";
+  position: absolute;
+  font-size: 2rem;
+  top: 5px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-city {
+  height: 2em;
+  width: 15em;
+  background: none;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  outline: none;
+}
+
+.search-city:focus {
+  border: 2px solid white;
+}
+
+.forecast-wrap {
+  grid-area: forecast;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 1em;
+}
+
+.forecast-tiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 3em;
+  overflow-x: scroll;
+  overflow-y: visible;
+  min-height: 150px;
+}
+
+.forecast-btn {
+  width: 100px;
+  padding: 0.5em;
+  background: none;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.forecast-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  width: 200px;
+}
+
+.forecast-day {
+  font-size: 1rem;
+}
+
+.forecast-hour {
+  font-size: 1rem;
+}
+
+.forecast-icon {
+  height: 50px;
+}
+
+.forecast-temp {
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.forecast-celsius::after {
+  content: "°C";
+  position: absolute;
+  font-size: 1rem;
+  top: 2px;
+}
+.forecast-fahrenheit::after {
+  content: "°F";
+  position: absolute;
+  font-size: 1rem;
+  top: 2px;
+}
+
+.forecast-description {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.credits {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  z-index: 1;
+}
+
+.credit-wrap {
+  display: none;
+  height: auto;
+  width: auto;
+  padding: 1em;
+  background-color: rgba(194, 194, 194, 0.8);
+  border-radius: 5px;
+}
+.credit-list {
+  list-style: none;
+}
+.credit-list li {
+  padding-bottom: 0.5em;
+}
+.credit-list a {
+  text-decoration: none;
+  color: black;
+}
+
+.credits:hover .credit-wrap {
+  display: block;
+}
+
+.credits:hover .credit-footer {
+  display: none;
+}
