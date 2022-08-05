@@ -185,9 +185,8 @@
   align-items: center;
   width: 100%;
   gap: 3em;
-  overflow-x: scroll;
-  overflow-y: visible;
-  min-height: 150px;
+  /* overflow-x: scroll;
+  overflow-y: visible; */
 }
 
 .forecast-btn {
